@@ -139,6 +139,13 @@ table {
     format("opentype");
   font-display: swap;
 }
+@font-face {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/Kanit-Medium.ttf");
+  font-display: swap;
+}
 
 body {
   height: 100vh;
