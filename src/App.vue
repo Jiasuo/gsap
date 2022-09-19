@@ -1,5 +1,6 @@
 <script setup>
 import CustomSvg from './components/CustomSvg.vue';
+import CustomSvgMealitLogo from './components/CustomSvgMealitLogo.vue';
 // import TextPlugin from "./components/TextPlugin.vue"
 // import SplitText from "./components/SplitText.vue"
 // import UtilsWrap from "./components/UtilsWrap.vue"
@@ -14,5 +15,6 @@ import CustomSvg from './components/CustomSvg.vue';
 <template>
   <!-- <Distribute /> -->
   <!-- <Stagger /> -->
-  <CustomSvg />
+  <!-- <CustomSvg /> -->
+  <CustomSvgMealitLogo />
 </template>

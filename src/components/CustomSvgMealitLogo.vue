@@ -1,0 +1,104 @@
+<script setup>
+import { gsap } from "gsap"
+import { GSDevTools } from "gsap-trial/all";
+import { onMounted, ref } from "vue";
+
+gsap.registerPlugin(GSDevTools)
+
+const svg = ref(null)
+
+const animation = gsap.timeline({
+  defaults: {
+    duration: 0.3,
+    ease: "linear"
+  },
+  repeat: -1,
+  repeatDelay: 0.3,
+  yoyo: 1
+})
+
+onMounted(() => {
+  animation.to("#eye_l", {
+    attr: {
+      ry: 0.5
+    }
+  })
+    .to("#eye_r", {
+      attr: {
+        ry: 0.5
+      }
+    }, 0)
+
+  GSDevTools.create({ animation })
+})
+</script>
+
+<template>
+  <svg class="mySvg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <defs></defs>
+    <g id="layer5" transform="matrix(2.235893, 0, 0, 2.235893, -414.474487, -830.801636)" style="">
+      <path style="fill:#00b500;fill-opacity:1;stroke:none"
+        d="m 256.33929,521.55861 0,-30.96752 5.625,0 5.78125,15.27556 5.7366,-15.27556 5.17858,0 0,30.96752 -6.16072,0 0,-15.625 -3.43123,9.62719 -2.9893,0 -3.31161,-9.44862 0,15.44643 z"
+        id="path3816"></path>
+      <path style="fill:#00b500;fill-opacity:1;stroke:none"
+        d="m 283.125,490.59109 0,30.96752 14.50893,0 0,-5.55328 -8.125,0 0,-7.42089 6.97736,0 0.0316,-5.57559 -6.91964,-0.0446 0,-6.94131 8.03571,0 0,-5.43181 z"
+        id="path3824"></path>
+      <path style="fill:#00b500;fill-opacity:1;stroke:none"
+        d="m 307.8125,490.59375 -8.21875,30.96875 5.625,0 1.25,-5.125 7.53125,0 1,5.125 6.0625,0 -7.96875,-30.96875 -5.28125,0 z m 2.8125,8.875 2.1875,11.09375 -4.90625,0 2.71875,-11.09375 z"
+        id="path3830"></path>
+      <path style="fill:#00b500;fill-opacity:1;stroke:none"
+        d="m 324.64286,490.59109 0,30.96752 13.38839,0 0,-5.49107 -7.40625,0 0,-25.47645 z" id="path3835"></path>
+      <path style="fill:#00b500;fill-opacity:1;stroke:none"
+        d="m 256.60714,524.59432 13.92857,0 0,69.91072 -14.01785,0 z" id="path3837"></path>
+      <path style="fill:#00b500;fill-opacity:1;stroke:none"
+        d="m 277.05357,524.59432 0,12.58929 11.51786,0 0,57.32143 14.19643,0 0,-57.58929 11.69643,0 0,-12.32143 z"
+        id="path3839"></path>
+      <path style="fill:#00b500;fill-opacity:1;stroke:none"
+        d="m 325.08929,524.59432 0,49.64286 11.95982,0 0,-49.64286 z" id="path3841"></path>
+      <path style="fill:#00b500;fill-opacity:1;stroke:none"
+        d="m 324.10714,594.50504 0,-14.82143 13.92411,0 0,14.82143 z" id="path3843"></path>
+    </g>
+    <g id="layer4" transform="matrix(2.235893, 0, 0, 2.235893, -414.374756, -830.801636)" style="">
+      <path style="fill:#394545;fill-opacity:1;stroke:none"
+        d="m 272.5,454.25 c -15.90897,10.45516 -16.25,32.40625 -16.25,32.40625 l 81.78125,0 c 0,0 0.18699,-20.68581 -17.84375,-32.40625 -7.4334,8.16623 -40.50292,7.81279 -47.6875,0 z m 24.5625,10.78125 c 1.72862,0 3.125,1.44341 3.125,3.21875 0,1.77534 -1.39638,3.21875 -3.125,3.21875 -1.72862,0 -3.15625,-1.44341 -3.15625,-3.21875 0,-1.77534 1.42763,-3.21875 3.15625,-3.21875 z m 0,10 c 1.72862,0 3.125,1.44341 3.125,3.21875 0,1.77534 -1.39638,3.21875 -3.125,3.21875 -1.72862,0 -3.15625,-1.44341 -3.15625,-3.21875 0,-1.77534 1.42763,-3.21875 3.15625,-3.21875 z"
+        id="path3782"></path>
+    </g>
+    <g id="layer2" transform="matrix(2.235893, 0, 0, 2.235893, -414.374756, -830.801636)" style="">
+      <rect
+        style="fill:#ffffff;fill-opacity:1;stroke:#394545;stroke-width:7.03633499;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+        id="rect3768" width="49.290462" height="35.209938" x="271.91727" y="415.0564" ry="10.568483"></rect>
+      <path style="fill:#394545;fill-opacity:1;stroke:none"
+        d="m 291.17647,437.74749 10.73287,-0.0631 c 0,0 -0.65753,3.99577 -5.17703,3.78807 -4.5195,-0.2077 -5.55584,-3.72497 -5.55584,-3.72497 z"
+        id="path3779"></path>
+      <ellipse id="eye_l" style="stroke-width: 0px; stroke: rgb(22, 137, 57); paint-order: fill; fill: rgb(57, 69, 69);"
+        cx="304.47" cy="428.214" rx="2.803" ry="4.363"></ellipse>
+      <ellipse id="eye_r" style="stroke-width: 0px; stroke: rgb(22, 137, 57); paint-order: fill; fill: rgb(57, 69, 69);"
+        cx="288.43" cy="428.214" rx="2.803" ry="4.363"></ellipse>
+    </g>
+    <g id="layer1" transform="matrix(2.235893, 0, 0, 2.235893, -414.374756, -830.801636)" style="">
+      <path
+        style="fill:#ffffff;fill-opacity:1;stroke:#394545;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+        d="m 271.60476,415.01906 50.06569,0.0631 0.56821,-14.96288 c 0,0 3.10991,-7.05082 -0.88388,-11.36421 -3.99379,-4.31339 -9.96962,-2.13138 -11.99557,-1.51523 -0.68911,-6.61883 -6.73065,-11.47103 -12.15338,-11.52205 -5.42273,-0.051 -11.17823,5.41916 -12.02713,10.82757 -3.04124,-0.58742 -10.24209,-3.45301 -14.39469,2.30441 -4.1526,5.75742 0.88389,12.7216 0.88389,12.7216 z"
+        id="path3766"></path>
+    </g>
+  </svg>
+</template>
+
+<style scoped>
+svg.mySvg {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  /* border: 1px solid white; */
+}
+
+circle {
+  fill: #00b500;
+}
+
+polyline {
+  stroke: limegreen;
+  stroke-width: 0.01;
+  fill: none;
+}
+</style>
