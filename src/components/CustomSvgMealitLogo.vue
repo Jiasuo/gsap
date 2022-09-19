@@ -18,16 +18,35 @@ const animation = gsap.timeline({
 })
 
 onMounted(() => {
-  animation.to("#eye_l", {
+  // Blink eyes
+  // animation.to("#eye_l", {
+  //   attr: {
+  //     ry: 0.5
+  //   }
+  // })
+  //   .to("#eye_r", {
+  //     attr: {
+  //       ry: 0.5
+  //     }
+  //   }, 0)
+
+  // (attempt to) Surprise
+  animation.to("#eye_l, #eye_r", {
     attr: {
-      ry: 0.5
+      rx: 4.444,
+      ry: 6
     }
   })
-    .to("#eye_r", {
-      attr: {
-        ry: 0.5
-      }
-    }, 0)
+  .fromTo("#mouth",{
+    transformOrigin: "50% 50%",
+    attr:{
+      d: `m 291.17647,437.74749 10.73287,-0.0631 c 0,0 -0.65753,3.99577 -5.17703,3.78807 -4.5195,-0.2077 -5.55584,-3.72497 -5.55584,-3.72497 z`
+    }
+  }, {
+    attr:{
+      d: `m 291.17647,437.74749 10.73287,-0.0631 c 0,0 -0.65753,8 -5.17703,8 -5,-0.2077 -5.55584,-3.72497 -5.55584,-3.72497 z`
+    }
+  }, 0)
 
   GSDevTools.create({ animation })
 })
@@ -69,7 +88,7 @@ onMounted(() => {
         id="rect3768" width="49.290462" height="35.209938" x="271.91727" y="415.0564" ry="10.568483"></rect>
       <path style="fill:#394545;fill-opacity:1;stroke:none"
         d="m 291.17647,437.74749 10.73287,-0.0631 c 0,0 -0.65753,3.99577 -5.17703,3.78807 -4.5195,-0.2077 -5.55584,-3.72497 -5.55584,-3.72497 z"
-        id="path3779"></path>
+        id="mouth"></path>
       <ellipse id="eye_l" style="stroke-width: 0px; stroke: rgb(22, 137, 57); paint-order: fill; fill: rgb(57, 69, 69);"
         cx="304.47" cy="428.214" rx="2.803" ry="4.363"></ellipse>
       <ellipse id="eye_r" style="stroke-width: 0px; stroke: rgb(22, 137, 57); paint-order: fill; fill: rgb(57, 69, 69);"
